@@ -6,10 +6,10 @@ class UserHealth(models.Model):
     steps = models.IntegerField()
     minutesWalk = models.IntegerField()
     burnedEnergy = models.IntegerField()
-    
+    dateTimeActivity = models.DateField()
 
     def __str__(self):
-        return f'{self.email} ${self.steps} шагов ${self.minutesWalk} минут ходьбы ${self.burnedEnergy} калорий потрачено'
+        return f'{self.email} {self.steps} шагов {self.minutesWalk} минут ходьбы {self.burnedEnergy} калорий потрачено'
 
 
     class Meta:
