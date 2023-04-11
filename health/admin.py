@@ -4,7 +4,8 @@ from .models import *
 
 
 class UserHealthAdmin(admin.ModelAdmin):
-    search_fields = ('id', 'email', 'steps', 'minutesWalk', 'burnedEnergy', 'dateTimeActivity')
-    list_filter = ('id', 'email', 'steps', 'minutesWalk', 'burnedEnergy')
+    search_fields = ('id', 'email', 'gender', 'age', 'steps', 'minutesWalk', 'burnedEnergy', 'dateTimeActivity')
+    list_filter = ('id', 'email', 'gender', 'age', 'steps', 'minutesWalk', 'burnedEnergy')
+
 
 admin.site.register(UserHealth, UserHealthAdmin)
