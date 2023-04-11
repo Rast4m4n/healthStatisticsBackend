@@ -11,7 +11,10 @@ SECRET_KEY = 'django-insecure-w78vo^=+^#_audnei+*939ii!6#66m#jg_p#)m(by3yae*au8g
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '10.0.2.2',
+    '127.0.0.1',
+]
 
 
 # Application definition
@@ -44,6 +47,8 @@ ROOT_URLCONF = 'health_statistics.urls'
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
+    "http://10.0.2.2:3000",
+    "http://127.0.0.1:3000",
 ]
 
 

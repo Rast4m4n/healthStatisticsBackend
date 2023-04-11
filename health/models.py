@@ -8,7 +8,7 @@ class UserHealth(models.Model):
     steps = models.IntegerField()
     minutesWalk = models.IntegerField()
     burnedEnergy = models.IntegerField()
-    dateTimeActivity = models.DateField()
+    dateTimeActivity = models.DateTimeField()
 
     def __str__(self):
         return f'{self.email} {self.steps} шагов {self.minutesWalk} минут ходьбы {self.burnedEnergy} калорий потрачено'
