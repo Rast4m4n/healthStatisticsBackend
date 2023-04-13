@@ -35,6 +35,26 @@ class QuantityStepsFilter(admin.SimpleListFilter):
                 steps__gte=25000,
             )
 
+class UsersWithGoodActivity(admin.SimpleListFilter):
+    title = _('Норма активности')
+    parameter_name = 'minutesActivity'
+
+    def lookups(self, request, model_admin):
+        return (
+            ('badActivity', _('Активность меньше 75 минут')),
+            ('goodActivity', _('Активность больше 75 минут')),
+        )
+
+    def queryset(self, request, queryset):
+        if self.value() == 'badActivity':
+            return queryset.filter(
+                minutesWalk__lte=75,
+            )
+        if self.value() == 'goodActivity':
+            return queryset.filter(
+                minutesWalk__gte=75,
+            )
+
 
 class AgeThenFilter(admin.SimpleListFilter):
     title = _('Возраст')

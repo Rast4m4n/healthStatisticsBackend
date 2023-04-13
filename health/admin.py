@@ -6,7 +6,7 @@ from .filters import *
 
 class UserHealthAdmin(admin.ModelAdmin):
     search_fields = ('id', 'email')
-    list_filter = (QuantityStepsFilter, AgeThenFilter, GenderFilter,)
+    list_filter = (QuantityStepsFilter, AgeThenFilter, GenderFilter, UsersWithGoodActivity,)
 
 
 admin.site.register(UserHealth, UserHealthAdmin)
