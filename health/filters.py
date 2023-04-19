@@ -1,6 +1,5 @@
-from .models import *
-from django.utils.translation import gettext_lazy as _
 from django.contrib import admin
+from django.utils.translation import gettext_lazy as _
 
 
 class QuantityStepsFilter(admin.SimpleListFilter):
@@ -34,6 +33,7 @@ class QuantityStepsFilter(admin.SimpleListFilter):
             return queryset.filter(
                 steps__gte=25000,
             )
+
 
 class UsersWithGoodActivity(admin.SimpleListFilter):
     title = _('Норма активности')

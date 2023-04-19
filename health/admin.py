@@ -1,13 +1,18 @@
 from django.contrib import admin
+
+from .filters import (AgeThenFilter, GenderFilter, QuantityStepsFilter,
+                      UsersWithGoodActivity)
 from .models import *
-from django.utils.translation import gettext_lazy as _
-from .filters import *
 
 
-class UserHealthAdmin(admin.ModelAdmin):
+class HealthAdmin(admin.ModelAdmin):
+    list_filter = (QuantityStepsFilter, AgeThenFilter,
+                   GenderFilter, UsersWithGoodActivity,)
+
+
+class UserAdmin(admin.ModelAdmin):
     search_fields = ('id', 'email')
-    list_filter = (QuantityStepsFilter, AgeThenFilter, GenderFilter, UsersWithGoodActivity,)
 
 
-admin.site.register(UserHealth, UserHealthAdmin)
-
+admin.site.register(Health, HealthAdmin)
+admin.site.register(User, UserAdmin)

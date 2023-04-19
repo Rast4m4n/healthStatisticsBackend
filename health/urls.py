@@ -1,10 +1,13 @@
 from rest_framework import routers
-from .api import *
+
 from .utils import *
+from .views import *
 
 router = routers.DefaultRouter()
-router.register('api/usersHealth', UserHealthViewSet, 'usersHealth')
-deleteOldData()
+router.register('api/health', HealthViewSet, 'health')
+router.register('api/user', UserViewSet, 'user')
+
+# deleteOldData()
 # generateRandomData(100)
 
 
