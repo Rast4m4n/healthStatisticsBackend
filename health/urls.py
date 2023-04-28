@@ -5,7 +5,7 @@ from .views import *
 
 router = routers.DefaultRouter()
 router.register('api/health', HealthViewSet, 'health')
-router.register('api/user', UserViewSet, 'user')
+router.register('api/users', UserViewSet, 'users')
 
 # deleteOldData()
 # generateRandomData(100)

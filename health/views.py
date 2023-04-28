@@ -1,5 +1,4 @@
 from rest_framework import permissions, viewsets
-
 from .models import *
 from .serializers import *
 
@@ -18,3 +17,6 @@ class UserViewSet(viewsets.ModelViewSet):
         permissions.AllowAny
     ]
     serializer_class = UserSerializer
+
+
+
